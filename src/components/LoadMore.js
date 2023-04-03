@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 const LoadMore = ({items}) => {
     const [list,setList]=useState([]);
     function LoadMore(){
-        let itemstoAdd=items.splice(0,10);
-        setList([...list,...itemstoAdd])
+        setTimeout(()=>{
+            let itemstoAdd=items.splice(0,10);
+            setList([...list,...itemstoAdd])
+        },500)
     }
   return (
     <div>
@@ -17,7 +19,9 @@ const LoadMore = ({items}) => {
                 )
             })}
         </ul>
-        <button onClick={LoadMore}>Load More</button>
+        {(items.length>0)
+        ?<button onClick={LoadMore}>Load More</button>
+        :""}
     </div>
   )
 }
