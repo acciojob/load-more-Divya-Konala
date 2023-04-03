@@ -1,6 +1,7 @@
 
 import React from "react";
 import './../styles/App.css';
+import LoadMore from "./LoadMore";
 
 const items = [
   "Item 1",
@@ -38,7 +39,9 @@ const items = [
 const App = () => {
   return (
     <div>
-        {/* Do not remove the main div */}
+        {/* Do not remove the main div */
+        <LoadMore items={items}/>
+        }
     </div>
   )
 }
